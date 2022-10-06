@@ -5,7 +5,8 @@ import styles from '../../styles/Home.module.css'
 
 // SSGの場合
 export async function getStaticProps({params}) {
-  const req = await fetch(`http://localhost:3000/${params.id}.json`);
+  const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${params.id}.json`);
+  console.log(process.env.NEXT_PUBLIC_BASE_URL);
   const data = await req.json();
 
   return {
@@ -16,7 +17,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-  const req = await fetch(`http://localhost:3000/products.json`);
+  const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`);
   const data = await req.json();
 
   const paths = data.map(product => {
