@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import styles from '../../styles/Home.module.css'
 
@@ -52,7 +53,7 @@ const Product = ({ product }) => {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1>{id}のページです</h1>
-        <img src={product.image} width="300" height="400" />
+        <Image src={product.image} width={300} height={400} />
         <p>{product.name}</p>
         <br />
         <Link href="/products">
