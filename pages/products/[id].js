@@ -54,7 +54,7 @@ const Product = ({ product }) => {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1>{id}のページです</h1>
-        <Image src={product.image} width={300} height={400} />
+        <Image src={product.image} width={300} height={400} alt="" />
         <p>{product.name}</p>
         <br />
         <Link href="/products">
